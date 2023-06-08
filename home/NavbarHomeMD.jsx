@@ -4,34 +4,37 @@ export default function NavbarHomeMD(props) {
   const sezioni = [
     "Manuale",
     "Regolamento",
+    "Logo",
     "Disclaimer",
     "Ringraziamenti",
-    "Gioca",
   ];
 
-  const defaultClass = "clickable text-center py-1 h5";
-  const active = defaultClass + " text-rossoSangue bg-biancoSporco rounded";
-  const notActive = defaultClass + " hover-text-oroVecchio";
+  const defaultClass = "clickable text-center h5 d-inline-block py-2 rounded";
+  const active = defaultClass + " text-rossoSangue bg-biancoSporco border-rossoSangue";
+  const notActive = defaultClass + " hover-gb-borgogna";
 
   return (
     <>
-      <Col
-        md={{ span: 2 }}
-        className={defaultClass}
-        onClick={() => props.change(0)}
-      >
-        Logo
-      </Col>
       {sezioni.map((item, index) => {
-        return (
+        return item != "Logo" ? (
           <Col
             key={index}
-            md={{ span: 2 }}
-            xl={{ offset: 1, span: 1 }}
-            className={props.selected == index+1 ? active : notActive}
-            onClick={() => props.change(index+1)}
+            md={index != 0 ? { span: 2 } : { span: 2, offset: 1 }}
+            xl={index != 3 ? { offset: 1, span: 1 } : { span: 1 }}
+            className={props.selected == index ? active : notActive}
+            onClick={() => props.change(index)}
           >
             {item}
+          </Col>
+        ) : (
+          <Col 
+            key={index}
+            md={2} 
+            xl={4} 
+            className={defaultClass} 
+            onClick={() => props.change(2)}
+          >
+            <img width={420} height={50} />
           </Col>
         );
       })}

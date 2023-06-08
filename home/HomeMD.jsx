@@ -3,7 +3,7 @@ import NavbarHomeMD from "./NavbarHomeMD";
 import { useState } from "react";
 
 export default function HomeMD() {
-  const [schermata, setSchermata] = useState(0);
+  const [schermata, setSchermata] = useState(2);
 
   return (
     <Container fluid>
