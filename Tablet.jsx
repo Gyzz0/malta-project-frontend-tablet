@@ -1,11 +1,14 @@
-import { Container } from 'react-bootstrap';
+import HomeMD from "./home/HomeMD";
+import LandaMD from "./landa/LandaMD";
 
-export default function Tablet() {
+export default function Tablet(props) {
   return (
     <>
-    <Container fluid>
-      <h1>Tablet</h1>
-    </Container>
+    {
+      props.page!="L" 
+        ? <HomeMD />
+        : <LandaMD />
+    }
     </>
   );
 }
