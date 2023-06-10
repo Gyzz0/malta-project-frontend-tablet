@@ -11,7 +11,7 @@ export default function NavbarHomeMD(props) {
 
   const defaultClass = "clickable text-center h5 d-inline-block py-2 rounded";
   const active = defaultClass + " text-rossoSangue bg-biancoSporco border-rossoSangue";
-  const notActive = defaultClass + " hover-gb-borgogna";
+  const notActive = defaultClass + " hover-bg-borgogna";
 
   return (
     <>
