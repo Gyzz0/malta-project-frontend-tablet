@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Col } from "react-bootstrap";
 import GenericModal from "../../../assets/components/GenericModal";
+import Manuale from "../../../assets/components/Manuale";
 
 export default function NavbarLandaOffMD(props) {
   const [modalIndex, setModalIndex]=useState(null);
@@ -15,7 +16,7 @@ export default function NavbarLandaOffMD(props) {
 
   const componenti = [
     null,
-    null,
+    <Manuale />,
     null,
     null,
     null,
